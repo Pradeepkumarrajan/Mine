@@ -1,0 +1,227 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://wallpaperaccess.com/full/5652006.jpg'); /* Replace with your own image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.hero h1 {
+    z-index: 2;
+    font-size: 4em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hero p {
+    z-index: 2;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1e90ff;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+.section p {
+    font-size: 1.1em;
+    color: #111111;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.section h3 {
+    font-size: 2em;
+    color: #111111;
+    margin-bottom: 15px;
+}
+
+.section .icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #1e90ff;
+}
+
+.section .icon:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .section p {
+        font-size: 1em;
+    }
+}
+
+         /* Footer */
+         footer {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+            color: #bbb;
+        }
+
+        footer a {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+        
+        /* Animation for content */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design for mobile */
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .about-section p {
+                font-size: 1em;
+            }
+
+        }
+/**/
+        .home-link {
+            font-size: 20px;
+            text-decoration: none;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-link:hover {
+            background-color: #1e90ff;
+        }
+
+        .home-link .icon {
+            margin-right: 8px;
+        }
+          /* Side Navigation Menu */
+       .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        z-index: 1000;
+    }
+
+    .sidenav a {
+        padding: 16px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+        border-bottom: 1px solid #444;
+    }
+
+    .sidenav a:hover {
+        background-color: #575757;
+        transform: translateX(10px);
+    }
+
+    .sidenav .icon {
+        font-size: 24px;
+        margin-right: 15px;
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+        font-size: 30px;
+        color: white;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2000;
+        cursor: pointer;
+    }
+         /* When the side menu is open */
+    .sidenav.open {
+            width: 250px;
+    }
+
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                left: 15px;
+                top: 10px;
+            }
+
+            .sidenav a {
+                font-size: 16px;
+                padding: 14px 30px;
+            }
+
+            .sidenav {
+                width: 0; /* Initially hidden on mobile */
+            }
+
+            .sidenav.open {
+                width: 100%; /* Full width on mobile */
+            }
+        }
