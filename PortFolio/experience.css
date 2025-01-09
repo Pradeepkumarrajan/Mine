@@ -82,18 +82,31 @@ h2 {
     }
 }
 
-/* Side Navigation Menu */
+/* Hamburger Icon */
+.hamburger {
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+/* Side Navigation */
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidenav a {
@@ -104,6 +117,7 @@ h2 {
     display: block;
     transition: 0.3s;
     border-bottom: 1px solid #444;
+    font-weight: 600;
 }
 
 .sidenav a:hover {
@@ -116,37 +130,38 @@ h2 {
     margin-right: 15px;
 }
 
-/* Hamburger menu */
-.hamburger {
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 2000;
-    cursor: pointer;
-}
-     /* When the side menu is open */
+/* When the side menu is open */
 .sidenav.open {
-        width: 250px;
+    width: 250px;
 }
 
-    @media screen and (max-width: 768px) {
-        .hamburger {
-            left: 15px;
-            top: 10px;
-        }
-
-        .sidenav a {
-            font-size: 16px;
-            padding: 14px 30px;
-        }
-
-        .sidenav {
-            width: 0; /* Initially hidden on mobile */
-        }
-
-        .sidenav.open {
-            width: 100%; /* Full width on mobile */
-        }
+/* Media Query for responsiveness */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        left: 15px;
+        top: 10px;
     }
+
+    .sidenav a {
+        font-size: 16px;
+        padding: 14px 30px;
+    }
+
+    .sidenav {
+        width: 0;
+    }
+
+    .sidenav.open {
+        width: 100%;
+    }
+}
+
+/* Smooth Animation for Side Navigation */
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 250px;
+    }
+}
