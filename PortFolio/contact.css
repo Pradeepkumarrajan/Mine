@@ -1,63 +1,163 @@
-body, html {
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #121212;
-    color: #fff;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
-.container {
-    width: 80%;
-    margin: 50px auto;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;  /* Dark background */
+    color: #f1f1f1;  /* Light text color for contrast */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #1e1e1e;  /* Darker container background */
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);  /* Slightly darker shadow */
+    padding: 30px;
     text-align: center;
 }
 
-h2 {
-    font-size: 2.5em;
+.contact-header h1 {
+    font-size: 2.5rem;
+    color: #4CAF50;  /* Green color for header */
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1.2rem;
+    color: #bbb;  /* Lighter text for subtitle */
+    margin-bottom: 40px;
+}
+
+.contact-form-section {
     margin-bottom: 30px;
-    color: #1e90ff;
 }
 
-.contact-form {
-    background-color: #333;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 10px;
 }
 
-input, textarea {
+.input-group label {
+    font-size: 1.1rem;
+    color: #ccc;  /* Light text for label */
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input,
+.input-group textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #444;
-    border: 1px solid #555;
+    padding: 12px;
+    font-size: 1rem;
     border-radius: 5px;
-    color: #555;
-    font-size: 1em;
+    border: 2px solid #444;  /* Darker border */
+    background-color: #2b2b2b;  /* Dark background for inputs */
+    color: #f1f1f1;  /* Light text for inputs */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-input:focus, textarea:focus {
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #4CAF50;  /* Green border on focus */
     outline: none;
-    border: 1px solid #1e90ff;
+    background-color: #333;  /* Slightly lighter background on focus */
 }
 
-button {
-    background-color: #1e90ff;
-    color: white;
-    padding: 15px 30px;
+textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #4CAF50;  /* Green color for the submit button */
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-    background-color: #3b8cff;
+.submit-btn:hover {
+    background-color: #45a049;  /* Darker green on hover */
+    transform: scale(1.05);  /* Slight scaling effect */
 }
 
- /* Side Navigation Menu */
+.submit-btn:active {
+    transform: scale(1);  /* Reset scale on click */
+}
+
+.social-media {
+    margin-top: 40px;
+}
+
+.social-media h3 {
+    font-size: 1.5rem;
+    color: #fff;  /* White text for social media header */
+    margin-bottom: 20px;
+}
+
+.social-media ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.social-media ul li {
+    margin: 0 15px;
+}
+
+.social-media ul li a {
+    font-size: 2rem;
+    color: #fff;  /* White icons initially */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #4CAF50;  /* Green color for hover effect */
+    transform: scale(1.1);  /* Slight scaling effect on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+
+    .contact-header h1 {
+        font-size: 2rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 15px;
+    }
+
+    .contact-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+    }
+}
 /* Hamburger Icon */
 .hamburger {
     font-size: 30px;
@@ -142,108 +242,3 @@ button:hover {
     }
 }
 
-    .social-icons {
-        list-style-type: none; /* Remove default list bullets */
-         padding: 0;
-         margin: 0;
-          display: flex; /* Use flexbox to align items horizontally */
-          justify-content: center; /* Center the list items horizontally */
-           gap: 20px;
-    }
-    .social-icons  li {
-        margin: 10px;
-        transition: transform 0.3s ease-in-out; /* Smooth animation on hover */
-    }
-
-    .social-icons a {
-        display: inline-block;
-        text-decoration: none;
-        color: #007bff;
-        font-size: 24px; 
-        transition: transform 0.3s ease-in-out, color 0.3s ease; 
-    }
-
-    .social-icons a:hover {
-        color: #0056b3;  /* Change color when hovered */
-        transform: scale(1.2); 
-    }
-    .social-icons a i {
-        margin-right: 8px;  /* Space between icon and text */
-    }
-/*social media mobile View*/
-@media screen and (max-width: 768px) {
-.social-icons  {
-    padding-left: 0;
-}
-
-.social-icons  li {
-    margin: 15px 0;
-    font-size: 18px;
-    display: block; /* Stack items vertically */
-}
-
-.social-icons  a {
-    font-size: 16px;
-}
-
-.social-icons i {
-    margin-right: 10px;
-}
-}
-
-/* Responsiveness for Smaller Mobile Devices */
-@media screen and (max-width: 480px) {
-.social-icons  li {
-    font-size: 16px;
-}
-
-.social-icons  a {
-    font-size: 14px;
-}
-}
-
-
-
-/**/
-.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.navbar a {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.navbar a:hover {
-    transform: translateZ(10px); /* Apply 3D translation */
-    color: #1e90ff;
-}
-
-.navbar .icon {
-    margin-right: 10px;
-    font-size: 30px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* 3D effect on icons */
-.navbar .icon i {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 
-                 -2px -2px 4px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-/* Hover effect on icons */
-.navbar a:hover .icon i {
-    transform: rotateX(10deg) rotateY(10deg); /* Slight 3D rotation */
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
